@@ -1,9 +1,9 @@
 const router = require('express').Router();
-// const { filterByQuery, findById, createNewAnimal, validateAnimal } = require('../../lib/animals');
-const { notes } = require('../../data/notes');
+const { filterByQuery, createNewNote, validateNote } = require('../../lib/notes');
+const { notesDb } = require('../../data/notes.json');
 
 router.get('/notes', (req, res) => {
-  let results = notes;
+  let results = notesDb;
   if (req.query) {
     results = filterByQuery(req.query, results);
   }
@@ -11,11 +11,12 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
-
+  // set id based on what the next index of the array will be
+  req.body.id = notesDb.length.toString();
   if (!validateNote(req.body)) {
     res.status(400).send('The note is not properly formatted.');
   } else {
-    const note = createNewNote(req.body, notes);
+    const note = createNewNote(req.body, notesDb);
     res.json(note);
   }
 });
