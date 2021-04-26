@@ -2,7 +2,7 @@
 
 ## Description: 
 
-
+This app allows users to input notes and displays them to the side. 
 
 ## Table of Contents
 
@@ -13,11 +13,13 @@
 
 ## Installation:
 
-
+Clone the repo, install NPM, and run "npm start" in the command line. 
 
 # Usage: 
 
+Navigate to local host 3003 to use the site. 
 
+![Image of site](./public/assets/img/notetakrImg.png)
 
 ## License: 
 
@@ -31,3 +33,6 @@ Katherine Lynn with starter code from UofA bootcamp
 
 [Github repository](https://https://github.com/klynn726/noteTaker)
 
+## Heroku:
+
+[Deployed application]()
